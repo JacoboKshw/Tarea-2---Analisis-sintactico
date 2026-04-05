@@ -1,4 +1,4 @@
-# Comparación de Algoritmos de Parsing: CYK vs Bison LALR(1)
+# Comparación de Algoritmos de Parsing: CYK vs Bison 
 
 ## ¿Qué problema resuelve esto?
 
@@ -19,7 +19,7 @@ CYK recibe la gramática convertida a un formato estricto llamado Forma Normal d
 
 Su complejidad es **O(n³)**, lo que significa que si la cadena crece, el tiempo sube de forma cúbica.
 
-### Bison LALR(1)
+### Bison 
 
 Bison toma la gramática escrita de forma natural y genera automáticamente un programa en C que reconoce el lenguaje. Ese programa usa una pila y una tabla de decisiones precalculada para procesar la cadena de izquierda a derecha en un solo recorrido. Es el mismo mecanismo que usan los compiladores de lenguajes como C, Python o Java.
 
@@ -30,6 +30,16 @@ Su complejidad es **O(n)**, lo que significa que el tiempo crece de forma propor
 ## Resultados obtenidos
 
 Estas son las mediciones reales obtenidas al ejecutar ambos algoritmos:
+
+## Bison
+
+<img width="808" height="575" alt="imagen" src="https://github.com/user-attachments/assets/58e4aa9b-f548-4b91-9d16-b40c4d4d98a6" />
+
+## CYK
+
+<img width="824" height="507" alt="imagen" src="https://github.com/user-attachments/assets/3dc1fe6d-34f9-4266-a819-bf9e7fd1848f" />
+
+## Resultado
 
 | n | Longitud | CYK (ms) | Bison (ms) | Bison es más rápido por... |
 |---|----------|----------|------------|---------------------------|
@@ -43,6 +53,8 @@ Estas son las mediciones reales obtenidas al ejecutar ambos algoritmos:
 | 17 | 34 | 2.466508 | 0.000256 | 9635x |
 
 Ambos algoritmos aceptaron correctamente todas las cadenas válidas. La diferencia está únicamente en la velocidad.
+
+<img width="2084" height="741" alt="cyk_vs_bison" src="https://github.com/user-attachments/assets/5124a80c-2c88-498c-b14c-c186047d0d40" />
 
 ---
 

@@ -5,7 +5,7 @@
 Cuando se trabaja con lenguajes formales, una tarea fundamental es determinar si una cadena de texto pertenece o no a un lenguaje. Para eso existen los parsers. En este proyecto se comparan dos enfoques muy distintos para hacer exactamente lo mismo:
 
 - **CYK**: un algoritmo clásico basado en programación dinámica
-- **Bison**: una herramienta profesional que genera parsers en C, usada en compiladores reales
+- **Bison (LALR1)**: una herramienta profesional que genera parsers en C, usada en compiladores reales
 
 El lenguaje que ambos deben reconocer es `aⁿbⁿ`, es decir, cadenas como `ab`, `aabb`, `aaabbb`, y así sucesivamente. Es un lenguaje sencillo pero suficiente para comparar el rendimiento de ambos enfoques.
 
@@ -19,7 +19,7 @@ CYK recibe la gramática convertida a un formato estricto llamado Forma Normal d
 
 Su complejidad es **O(n³)**, lo que significa que si la cadena crece, el tiempo sube de forma cúbica.
 
-### Bison 
+### Bison (LALR1)
 
 Bison toma la gramática escrita de forma natural y genera automáticamente un programa en C que reconoce el lenguaje. Ese programa usa una pila y una tabla de decisiones precalculada para procesar la cadena de izquierda a derecha en un solo recorrido. Es el mismo mecanismo que usan los compiladores de lenguajes como C, Python o Java.
 

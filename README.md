@@ -1,8 +1,8 @@
 # Comparación de Algoritmos de Parsing: CYK vs Bison 
 
-## ¿Qué problema resuelve esto?
+## ¿Para que se usan?
 
-Cuando se trabaja con lenguajes formales, una tarea fundamental es determinar si una cadena de texto pertenece o no a un lenguaje. Para eso existen los **parsers** (analizadores sintácticos). En este proyecto se comparan dos enfoques muy distintos para hacer exactamente lo mismo:
+Cuando se trabaja con lenguajes formales, una tarea fundamental es determinar si una cadena de texto pertenece o no a un lenguaje. Para eso existen los parsers. En este proyecto se comparan dos enfoques muy distintos para hacer exactamente lo mismo:
 
 - **CYK**: un algoritmo clásico basado en programación dinámica
 - **Bison**: una herramienta profesional que genera parsers en C, usada en compiladores reales
@@ -66,16 +66,12 @@ Hay dos factores combinados:
 
 **El lenguaje de implementación.** CYK está escrito en Python, que es un lenguaje interpretado. Bison genera código C compilado con optimización, que es mucho más cercano al hardware. Esta diferencia por sí sola puede ser de 50x a 100x, y se suma a la diferencia algorítmica.
 
-Por eso al llegar a cadenas de longitud 34, CYK tarda casi 2.5 milisegundos mientras Bison tarda 0.00025 milisegundos. Una diferencia de casi 10.000 veces.
-
 
 ---
 
 ## Conclusión
 
-El experimento muestra de forma clara que **Bison supera a CYK en velocidad por varios órdenes de magnitud**, especialmente a medida que las cadenas crecen. Esto se debe a que Bison usa un algoritmo lineal ejecutado en código compilado, mientras CYK usa un algoritmo cúbico ejecutado en Python.
-
-Sin embargo, la conclusión más importante no es que uno sea mejor que el otro, sino que **son herramientas diseñadas para contextos distintos**. CYK es un algoritmo de propósito general para análisis sintáctico teórico; Bison es una herramienta de ingeniería para construir parsers eficientes en producción.
+El experimento muestra de forma clara que Bison supera a CYK en velocidad por varios órdenes de magnitud, especialmente a medida que las cadenas crecen. Esto se debe a que Bison usa un algoritmo lineal ejecutado en código compilado, mientras CYK usa un algoritmo cúbico ejecutado en Python.
 
 ---
 
